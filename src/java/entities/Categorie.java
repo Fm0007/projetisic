@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 /**
@@ -27,8 +28,8 @@ public class Categorie implements Serializable {
     private String nom;
     @OneToMany(mappedBy = "categorie")
     private List<Produit> produits;
-    @OneToMany
-    private List<Categorie> souscategorie;
+    @ManyToOne
+    private Categorie categorie;
     
     public Categorie() {
     }
@@ -37,6 +38,22 @@ public class Categorie implements Serializable {
         this.nom = nom;
     }
 
+    public List<Produit> getProduits() {
+        return produits;
+    }
+
+    public void setProduits(List<Produit> produits) {
+        this.produits = produits;
+    }
+
+    public Categorie getSouscategorie() {
+        return categorie;
+    }
+
+    public void setSouscategorie(Categorie categorie) {
+        this.categorie = categorie;
+    }
+    
     public int getId() {
         return id;
     }
