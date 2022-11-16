@@ -6,11 +6,13 @@
 package entities;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -25,10 +27,15 @@ public class Produit implements Serializable {
     private String designation;
     private double prix;
     private String image;
+    
     @ManyToOne
     private Categorie categorie;
+    
     @ManyToOne
     private Marque marque;
+    
+    @OneToMany(mappedBy = "produit")
+    private List<LigneCommande> lignecommande;
 
     public String getDesignation() {
         return designation;
@@ -62,6 +69,14 @@ public class Produit implements Serializable {
         this.categorie = categorie;
     }
 
+    public List<LigneCommande> getLignecommande() {
+        return lignecommande;
+    }
+
+    public void setLignecommande(List<LigneCommande> lignecommande) {
+        this.lignecommande = lignecommande;
+    }
+    
     public Marque getMarque() {
         return marque;
     }

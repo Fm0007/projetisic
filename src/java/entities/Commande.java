@@ -23,6 +23,7 @@ import javax.persistence.TemporalType;
  */
 @Entity
 public class Commande implements Serializable{
+
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -78,6 +79,13 @@ public class Commande implements Serializable{
         this.date = date;
     }
     
+    public List<LigneCommande> getLignecommande() {
+        return lignecommande;
+    }
+
+    public void setLignecommande(List<LigneCommande> lignecommande) {
+        this.lignecommande = lignecommande;
+    }
     
     
 }
