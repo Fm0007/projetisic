@@ -12,5 +12,11 @@
     <mapping class="entities.Commande"/>
     <mapping class="entities.LigneCommande"/>
     <mapping class="entities.Produit"/>
+    <mapping class="entities.User"/>
+    <mapping class="entities.Client"/>
+    <mapping class="entities.Marque"/>
+    <mapping class="entities.Categorie"/>
+    <mapping class="entities.Facture"/>
+    <mapping class="entities.Admin"/>
   </session-factory>
 </hibernate-configuration>

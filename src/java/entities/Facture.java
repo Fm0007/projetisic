@@ -51,6 +51,14 @@ public class Facture implements Serializable {
         return date;
     }
 
+    public List<Commande> getCommandes() {
+        return commandes;
+    }
+
+    public void setCommandes(List<Commande> commandes) {
+        this.commandes = commandes;
+    }
+    
     public void setDate(Date date) {
         this.date = date;
     }

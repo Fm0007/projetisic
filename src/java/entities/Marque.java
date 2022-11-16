@@ -45,6 +45,14 @@ public class Marque {
         return nom;
     }
 
+    public List<Produit> getProduits() {
+        return produits;
+    }
+
+    public void setProduits(List<Produit> produits) {
+        this.produits = produits;
+    }
+    
     public void setNom(String nom) {
         this.nom = nom;
     }
