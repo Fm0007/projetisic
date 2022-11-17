@@ -17,7 +17,7 @@ import util.HibernateUtil;
  *
  * @author User
  */
-public class AdminService implements IDao<Admin> {
+public class FactureService implements IDao<Admin> {
 
     @Override
     public boolean create(Admin o) {

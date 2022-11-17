@@ -6,7 +6,7 @@
 package services;
 
 import dao.IDao;
-import entities.Produit;
+import entities.Marque;
 import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -17,10 +17,10 @@ import util.HibernateUtil;
  *
  * @author User
  */
-public class MarqueService implements IDao<Produit> {
+public class MarqueService implements IDao<Marque> {
 
     @Override
-    public boolean create(Produit o) {
+    public boolean create(Marque o) {
         Session session = null;
         Transaction tx = null;
         try {
@@ -40,7 +40,7 @@ public class MarqueService implements IDao<Produit> {
     }
 
     @Override
-    public boolean delete(Produit o) {
+    public boolean delete(Marque o) {
         Session session = null;
         Transaction tx = null;
         try {
@@ -60,7 +60,7 @@ public class MarqueService implements IDao<Produit> {
     }
 
     @Override
-    public boolean update(Produit o) {
+    public boolean update(Marque o) {
         Session session = null;
         Transaction tx = null;
         try {
@@ -80,14 +80,14 @@ public class MarqueService implements IDao<Produit> {
     }
 
     @Override
-    public Produit findById(int id) {
-        Produit produit = null;
+    public Marque findById(int id) {
+        Marque marque = null;
         Session session = null;
         Transaction tx = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            produit = (Produit) session.get(Produit.class, id);
+            marque = (Marque) session.get(Marque.class, id);
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {
@@ -96,18 +96,18 @@ public class MarqueService implements IDao<Produit> {
         } finally {
             session.close();
         }
-        return produit;  
+        return marque;  
     }
 
     @Override
-    public List<Produit> findAll() {
-        List<Produit> produits = null;
+    public List<Marque> findAll() {
+        List<Marque> marques = null;
         Session session = null;
         Transaction tx = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            produits = session.createQuery("from Produit").list();
+            marques = session.createQuery("from Marque").list();
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {
@@ -116,7 +116,7 @@ public class MarqueService implements IDao<Produit> {
         } finally {
             session.close();
         }
-        return produits;
+        return marques;
         }
     
 }
