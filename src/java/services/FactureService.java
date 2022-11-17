@@ -6,7 +6,7 @@
 package services;
 
 import dao.IDao;
-import entities.Admin;
+import entities.Facture;
 import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -17,10 +17,10 @@ import util.HibernateUtil;
  *
  * @author User
  */
-public class FactureService implements IDao<Admin> {
+public class FactureService implements IDao<Facture> {
 
     @Override
-    public boolean create(Admin o) {
+    public boolean create(Facture o) {
         Session session = null;
         Transaction tx = null;
         try {
@@ -40,7 +40,7 @@ public class FactureService implements IDao<Admin> {
     }
 
     @Override
-    public boolean delete(Admin o) {
+    public boolean delete(Facture o) {
         Session session = null;
         Transaction tx = null;
         try {
@@ -60,7 +60,7 @@ public class FactureService implements IDao<Admin> {
     }
 
     @Override
-    public boolean update(Admin o) {
+    public boolean update(Facture o) {
         Session session = null;
         Transaction tx = null;
         try {
@@ -80,14 +80,14 @@ public class FactureService implements IDao<Admin> {
     }
 
     @Override
-    public Admin findById(int id) {
-        Admin admin = null;
+    public Facture findById(int id) {
+        Facture facture = null;
         Session session = null;
         Transaction tx = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            admin = (Admin) session.get(Admin.class, id);
+            facture = (Facture) session.get(Facture.class, id);
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {
@@ -96,18 +96,18 @@ public class FactureService implements IDao<Admin> {
         } finally {
             session.close();
         }
-        return admin;  
+        return facture;  
     }
 
     @Override
-    public List<Admin> findAll() {
-        List<Admin> admins = null;
+    public List<Facture> findAll() {
+        List<Facture> factures = null;
         Session session = null;
         Transaction tx = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            admins = session.createQuery("from Admin").list();
+            factures = session.createQuery("from Facture").list();
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {
@@ -116,7 +116,7 @@ public class FactureService implements IDao<Admin> {
         } finally {
             session.close();
         }
-        return admins;
+        return factures;
         }
     
 }

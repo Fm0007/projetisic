@@ -6,7 +6,7 @@
 package services;
 
 import dao.IDao;
-import entities.Admin;
+import entities.Categorie;
 import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -17,10 +17,10 @@ import util.HibernateUtil;
  *
  * @author User
  */
-public class AdminService implements IDao<Admin> {
+public class CategorieService implements IDao<Categorie> {
 
     @Override
-    public boolean create(Admin o) {
+    public boolean create(Categorie o) {
         Session session = null;
         Transaction tx = null;
         try {
@@ -40,7 +40,7 @@ public class AdminService implements IDao<Admin> {
     }
 
     @Override
-    public boolean delete(Admin o) {
+    public boolean delete(Categorie o) {
         Session session = null;
         Transaction tx = null;
         try {
@@ -60,7 +60,7 @@ public class AdminService implements IDao<Admin> {
     }
 
     @Override
-    public boolean update(Admin o) {
+    public boolean update(Categorie o) {
         Session session = null;
         Transaction tx = null;
         try {
@@ -80,14 +80,14 @@ public class AdminService implements IDao<Admin> {
     }
 
     @Override
-    public Admin findById(int id) {
-        Admin admin = null;
+    public Categorie findById(int id) {
+        Categorie categorie = null;
         Session session = null;
         Transaction tx = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            admin = (Admin) session.get(Admin.class, id);
+            categorie = (Categorie) session.get(Categorie.class, id);
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {
@@ -96,18 +96,18 @@ public class AdminService implements IDao<Admin> {
         } finally {
             session.close();
         }
-        return admin;  
+        return categorie;  
     }
 
     @Override
-    public List<Admin> findAll() {
-        List<Admin> admins = null;
+    public List<Categorie> findAll() {
+        List<Categorie> categories = null;
         Session session = null;
         Transaction tx = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            admins = session.createQuery("from Admin").list();
+            categories = session.createQuery("from Categorie").list();
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {
@@ -116,7 +116,7 @@ public class AdminService implements IDao<Admin> {
         } finally {
             session.close();
         }
-        return admins;
+        return categories;
         }
     
 }
