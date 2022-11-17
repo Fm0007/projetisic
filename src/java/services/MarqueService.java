@@ -6,7 +6,7 @@
 package services;
 
 import dao.IDao;
-import entities.Client;
+import entities.Produit;
 import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -17,10 +17,10 @@ import util.HibernateUtil;
  *
  * @author User
  */
-public class ClientService implements IDao<Client> {
+public class MarqueService implements IDao<Produit> {
 
     @Override
-    public boolean create(Client o) {
+    public boolean create(Produit o) {
         Session session = null;
         Transaction tx = null;
         try {
@@ -40,7 +40,7 @@ public class ClientService implements IDao<Client> {
     }
 
     @Override
-    public boolean delete(Client o) {
+    public boolean delete(Produit o) {
         Session session = null;
         Transaction tx = null;
         try {
@@ -60,7 +60,7 @@ public class ClientService implements IDao<Client> {
     }
 
     @Override
-    public boolean update(Client o) {
+    public boolean update(Produit o) {
         Session session = null;
         Transaction tx = null;
         try {
@@ -80,14 +80,14 @@ public class ClientService implements IDao<Client> {
     }
 
     @Override
-    public Client findById(int id) {
-        Client client = null;
+    public Produit findById(int id) {
+        Produit produit = null;
         Session session = null;
         Transaction tx = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            client = (Client) session.get(Client.class, id);
+            produit = (Produit) session.get(Produit.class, id);
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {
@@ -96,18 +96,18 @@ public class ClientService implements IDao<Client> {
         } finally {
             session.close();
         }
-        return client;  
+        return produit;  
     }
 
     @Override
-    public List<Client> findAll() {
-        List<Client> clients = null;
+    public List<Produit> findAll() {
+        List<Produit> produits = null;
         Session session = null;
         Transaction tx = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            clients = session.createQuery("from Client").list();
+            produits = session.createQuery("from Produit").list();
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {
@@ -116,7 +116,7 @@ public class ClientService implements IDao<Client> {
         } finally {
             session.close();
         }
-        return clients;
+        return produits;
         }
     
 }
