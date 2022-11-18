@@ -7,6 +7,9 @@ package services;
 
 import dao.IDao;
 import entities.Client;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -36,7 +39,7 @@ public class ClientService implements IDao<Client> {
         } finally {
             session.close();
         }
-        return false;    
+        return false;
     }
 
     @Override
@@ -56,7 +59,7 @@ public class ClientService implements IDao<Client> {
         } finally {
             session.close();
         }
-        return false;    
+        return false;
     }
 
     @Override
@@ -76,7 +79,7 @@ public class ClientService implements IDao<Client> {
         } finally {
             session.close();
         }
-        return false;    
+        return false;
     }
 
     @Override
@@ -96,7 +99,7 @@ public class ClientService implements IDao<Client> {
         } finally {
             session.close();
         }
-        return client;  
+        return client;
     }
 
     @Override
@@ -117,6 +120,8 @@ public class ClientService implements IDao<Client> {
             session.close();
         }
         return clients;
-        }
+    }
+
     
+    //Source : www.exelib.net
 }

@@ -6,7 +6,7 @@
 package services;
 
 import dao.IDao;
-import entities.Categorie;
+import entities.LigneCommande;
 import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -17,10 +17,10 @@ import util.HibernateUtil;
  *
  * @author User
  */
-public class CategorieService implements IDao<Categorie> {
+public class LigneCommandeService implements IDao<LigneCommande> {
 
     @Override
-    public boolean create(Categorie o) {
+    public boolean create(LigneCommande o) {
         Session session = null;
         Transaction tx = null;
         try {
@@ -40,7 +40,7 @@ public class CategorieService implements IDao<Categorie> {
     }
 
     @Override
-    public boolean delete(Categorie o) {
+    public boolean delete(LigneCommande o) {
         Session session = null;
         Transaction tx = null;
         try {
@@ -60,7 +60,7 @@ public class CategorieService implements IDao<Categorie> {
     }
 
     @Override
-    public boolean update(Categorie o) {
+    public boolean update(LigneCommande o) {
         Session session = null;
         Transaction tx = null;
         try {
@@ -80,14 +80,14 @@ public class CategorieService implements IDao<Categorie> {
     }
 
     @Override
-    public Categorie findById(int id) {
-        Categorie categorie = null;
+    public LigneCommande findById(int id) {
+        LigneCommande ligneCommande = null;
         Session session = null;
         Transaction tx = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            categorie = (Categorie) session.get(Categorie.class, id);
+            ligneCommande = (LigneCommande) session.get(LigneCommande.class, id);
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {
@@ -96,18 +96,18 @@ public class CategorieService implements IDao<Categorie> {
         } finally {
             session.close();
         }
-        return categorie;  
+        return ligneCommande;  
     }
 
     @Override
-    public List<Categorie> findAll() {
-        List<Categorie> categories = null;
+    public List<LigneCommande> findAll() {
+        List<LigneCommande> ligneCommandes = null;
         Session session = null;
         Transaction tx = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            categories = session.createQuery("from Categorie").list();
+            ligneCommandes = session.createQuery("from LigneCommande").list();
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {
@@ -116,7 +116,7 @@ public class CategorieService implements IDao<Categorie> {
         } finally {
             session.close();
         }
-        return categories;
+        return ligneCommandes;
         }
     
 }

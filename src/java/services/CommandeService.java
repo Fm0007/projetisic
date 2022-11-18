@@ -6,7 +6,7 @@
 package services;
 
 import dao.IDao;
-import entities.Admin;
+import entities.Commande;
 import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -17,10 +17,10 @@ import util.HibernateUtil;
  *
  * @author User
  */
-public class AdminService implements IDao<Admin> {
+public class CommandeService implements IDao<Commande> {
 
     @Override
-    public boolean create(Admin o) {
+    public boolean create(Commande o) {
         Session session = null;
         Transaction tx = null;
         try {
@@ -40,7 +40,7 @@ public class AdminService implements IDao<Admin> {
     }
 
     @Override
-    public boolean delete(Admin o) {
+    public boolean delete(Commande o) {
         Session session = null;
         Transaction tx = null;
         try {
@@ -60,7 +60,7 @@ public class AdminService implements IDao<Admin> {
     }
 
     @Override
-    public boolean update(Admin o) {
+    public boolean update(Commande o) {
         Session session = null;
         Transaction tx = null;
         try {
@@ -80,14 +80,14 @@ public class AdminService implements IDao<Admin> {
     }
 
     @Override
-    public Admin findById(int id) {
-        Admin admin = null;
+    public Commande findById(int id) {
+        Commande commande = null;
         Session session = null;
         Transaction tx = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            admin = (Admin) session.get(Admin.class, id);
+            commande = (Commande) session.get(Commande.class, id);
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {
@@ -96,18 +96,18 @@ public class AdminService implements IDao<Admin> {
         } finally {
             session.close();
         }
-        return admin;  
+        return commande;  
     }
 
     @Override
-    public List<Admin> findAll() {
-        List<Admin> admins = null;
+    public List<Commande> findAll() {
+        List<Commande> commandes = null;
         Session session = null;
         Transaction tx = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            admins = session.createQuery("from Admin").list();
+            commandes = session.createQuery("from Commande").list();
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {
@@ -116,7 +116,7 @@ public class AdminService implements IDao<Admin> {
         } finally {
             session.close();
         }
-        return admins;
+        return commandes;
         }
     
 }

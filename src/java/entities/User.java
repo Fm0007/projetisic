@@ -6,6 +6,9 @@
 package entities;
 
 import java.io.Serializable;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -32,7 +35,7 @@ public class User implements Serializable{
 
     public User(String email, String password) {
         this.email = email;
-        this.password = password;
+        this.password = MD5(password);
     }
 
     public int getId() {
@@ -66,6 +69,16 @@ public class User implements Serializable{
     
     
     
-    
+    public static String MD5(String s) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            BigInteger bi = new BigInteger(1, md.digest(s.getBytes()));
+            return bi.toString(16);
+        } catch (NoSuchAlgorithmException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+    }
     
 }
+
