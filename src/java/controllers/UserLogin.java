@@ -5,6 +5,7 @@
  */
 package controllers;
 
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import services.ClientService;
 import static sun.security.jgss.GSSUtil.login;
 
 /**
@@ -21,7 +23,7 @@ import static sun.security.jgss.GSSUtil.login;
  */
 @WebServlet(name = "UserLogin", urlPatterns = {"/UserLogin"})
 public class UserLogin extends HttpServlet {
-
+    ClientService cs = new ClientService();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -33,11 +35,19 @@ public class UserLogin extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+             response.setContentType("application/json");
+            Gson gson = new Gson();
             String email = request.getParameter("email");
-            String pass = request.getParameter("pass");
+            String password = request.getParameter("password");
+            if(cs.findByEmail(email).getPassword().equals(password))
+            {
             HttpSession session = request.getSession(true);
             session.setAttribute("email", email);
-            System.out.println("SURE");
+            response.getWriter().write(gson.toJson(true));
+            }
+            else {
+                response.getWriter().write(gson.toJson(false));
+            }
             //Source : www.exelib.net
     }
 

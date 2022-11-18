@@ -121,7 +121,24 @@ public class ClientService implements IDao<Client> {
         }
         return clients;
     }
-
     
-    //Source : www.exelib.net
+    public Client findByEmail(String email) {
+        Client client = null;
+        Session session = null;
+        Transaction tx = null;
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            tx = session.beginTransaction();
+            client = (Client) session.getNamedQuery("findByEmail").setParameter("email", email).uniqueResult();
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+        } finally {
+            session.close();
+        }
+        return client;
+    }
+    
 }

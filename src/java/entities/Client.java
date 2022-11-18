@@ -7,6 +7,7 @@ package entities;
 
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 /**
@@ -14,6 +15,7 @@ import javax.persistence.OneToMany;
  * @author Lachgar
  */
 @Entity
+@NamedQuery(name = "findByEmail", query = "select c from Client c where c.email = :email ")
 public class Client extends User{
     
     private String nom;
