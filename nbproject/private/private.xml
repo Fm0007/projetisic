@@ -3,8 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/test/Test.java</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/index.html</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/ListAllProduct.java</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/login.html</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/newjsp.jsp</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/entities/User.java</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/entities/Commande.java</file>
@@ -21,10 +23,13 @@
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/dao/IDao.java</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/index.jsp</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/services/FactureService.java</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/css/login.css</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/ListAllCategorie.java</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/header.jsp</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/menu.jsp</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/services/LigneCommandeService.java</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/SendMailTLS.java</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/app.js</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/moment.js</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/jquery-3.3.1.min.js</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/UserLogin.java</file>

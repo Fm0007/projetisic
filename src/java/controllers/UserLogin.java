@@ -6,6 +6,8 @@
 package controllers;
 
 import com.google.gson.Gson;
+import entities.Admin;
+import entities.Client;
 import entities.User;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,6 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import services.AdminService;
 import services.ClientService;
 import static sun.security.jgss.GSSUtil.login;
 
@@ -25,6 +28,7 @@ import static sun.security.jgss.GSSUtil.login;
 @WebServlet(name = "UserLogin", urlPatterns = {"/UserLogin"})
 public class UserLogin extends HttpServlet {
     ClientService cs = new ClientService();
+    AdminService as = new AdminService();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -37,16 +41,12 @@ public class UserLogin extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
             String email = request.getParameter("email");
-            String password = request.getParameter("password");
-            if(cs.findByEmail(email).getPassword().equals(User.MD5(password)))
+            String password = User.MD5(request.getParameter("password"));
+            String pass2 = (cs.findByEmail(email).getPassword());
+            if(pass2.equals(password))
             {
             HttpSession session = request.getSession(true);
             session.setAttribute("email", email);
-            // dispatcha vers home 
-            if(cs.findByEmail(email).getClass().equals("Admin")){
-                System.out.println("admin");
-                
-            }
                     }
             else {
                 // errors 

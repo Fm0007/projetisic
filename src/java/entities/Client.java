@@ -15,7 +15,8 @@ import javax.persistence.OneToMany;
  * @author Lachgar
  */
 @Entity
-@NamedQuery(name = "findByEmail", query = "select c from Client c where c.email = :email ")
+
+
 public class Client extends User{
     
     private String nom;

@@ -6,10 +6,7 @@
 package services;
 
 import dao.IDao;
-import entities.Client;
-import java.math.BigInteger;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+import entities.User;
 import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -20,30 +17,36 @@ import util.HibernateUtil;
  *
  * @author User
  */
-public class ClientService implements IDao<Client> {
+public class UserService implements IDao<User> {
 
+     
+    
     @Override
-    public boolean create(Client o) {
-        Session session = null;
-        Transaction tx = null;
-        try {
-            session = HibernateUtil.getSessionFactory().openSession();
-            tx = session.beginTransaction();
-            session.save(o);
-            tx.commit();
-            return true;
-        } catch (HibernateException e) {
-            if (tx != null) {
-                tx.rollback();
-            }
-        } finally {
-            session.close();
+    public boolean create(User o) {
+        UserService us = new UserService();
+        if( us.findByEmail(o.getEmail())==null ) {
+                Session session = null;
+            Transaction tx = null;
+            try {
+                session = HibernateUtil.getSessionFactory().openSession();
+                tx = session.beginTransaction();
+                session.save(o);
+                tx.commit();
+                return true;
+            } catch (HibernateException e) {
+                if (tx != null) {
+                    tx.rollback();
+                }
+            } finally {
+                session.close();
+            } 
         }
+        
         return false;
     }
 
     @Override
-    public boolean delete(Client o) {
+    public boolean delete(User o) {
         Session session = null;
         Transaction tx = null;
         try {
@@ -63,7 +66,7 @@ public class ClientService implements IDao<Client> {
     }
 
     @Override
-    public boolean update(Client o) {
+    public boolean update(User o) {
         Session session = null;
         Transaction tx = null;
         try {
@@ -83,14 +86,14 @@ public class ClientService implements IDao<Client> {
     }
 
     @Override
-    public Client findById(int id) {
-        Client client = null;
+    public User findById(int id) {
+        User user = null;
         Session session = null;
         Transaction tx = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            client = (Client) session.get(Client.class, id);
+            user = (User) session.get(User.class, id);
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {
@@ -99,18 +102,18 @@ public class ClientService implements IDao<Client> {
         } finally {
             session.close();
         }
-        return client;
+        return user;
     }
 
     @Override
-    public List<Client> findAll() {
-        List<Client> clients = null;
+    public List<User> findAll() {
+        List<User> users = null;
         Session session = null;
         Transaction tx = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            clients = session.createQuery("from Client").list();
+            users = session.createQuery("from User").list();
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {
@@ -119,17 +122,17 @@ public class ClientService implements IDao<Client> {
         } finally {
             session.close();
         }
-        return clients;
+        return users;
     }
     
-    public Client findByEmail(String email) {
-        Client client = null;
+    public User findByEmail(String email) {
+        User user = null;
         Session session = null;
         Transaction tx = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            client = (Client) session.getNamedQuery("findByEmail").setParameter("email", email).uniqueResult();
+            user = (User) session.getNamedQuery("findByEmail").setParameter("email", email).uniqueResult();
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {
@@ -138,7 +141,7 @@ public class ClientService implements IDao<Client> {
         } finally {
             session.close();
         }
-        return client;
+        return user;
     }
     
 }
