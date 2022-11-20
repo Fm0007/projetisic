@@ -37,6 +37,15 @@ public class Produit implements Serializable {
     @OneToMany(mappedBy = "produit")
     private List<LigneCommande> lignecommande;
 
+    public Produit(String nom, String designation, double prix, String image, Categorie categorie, Marque marque) {
+        this.nom = nom;
+        this.designation = designation;
+        this.prix = prix;
+        this.image = image;
+        this.categorie = categorie;
+        this.marque = marque;
+    }
+
     public String getDesignation() {
         return designation;
     }

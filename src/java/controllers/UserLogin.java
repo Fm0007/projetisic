@@ -6,6 +6,7 @@
 package controllers;
 
 import com.google.gson.Gson;
+import entities.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -35,20 +36,23 @@ public class UserLogin extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-             response.setContentType("application/json");
-            Gson gson = new Gson();
             String email = request.getParameter("email");
             String password = request.getParameter("password");
-            if(cs.findByEmail(email).getPassword().equals(password))
+            if(cs.findByEmail(email).getPassword().equals(User.MD5(password)))
             {
             HttpSession session = request.getSession(true);
             session.setAttribute("email", email);
-            response.getWriter().write(gson.toJson(true));
+            // dispatcha vers home 
+            if(cs.findByEmail(email).getClass().equals("Admin")){
+                System.out.println("admin");
+                
             }
+                    }
             else {
-                response.getWriter().write(gson.toJson(false));
+                // errors 
+                //pass incorrect
             }
-            //Source : www.exelib.net
+            
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
