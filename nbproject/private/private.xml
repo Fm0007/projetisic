@@ -6,6 +6,7 @@
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/test/Test.java</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/index.html</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/ListAllProduct.java</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/entities/Admin.java</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/login.html</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/newjsp.jsp</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/entities/User.java</file>
@@ -17,7 +18,7 @@
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/UserRegister.java</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/entities/Client.java</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/util/HibernateUtil.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/services/ClientService.java</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/services/UserService.java</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/services/CommandeService.java</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/services/ProduitService.java</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/dao/IDao.java</file>
@@ -32,8 +33,9 @@
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/app.js</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/moment.js</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/jquery-3.3.1.min.js</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/hibernate.cfg.xml</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/entities/Categorie.java</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/UserLogin.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/services/AdminService.java</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/UserLogout.java</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/Chart.js</file>
         </group>

@@ -1,3 +1,10 @@
+<%-- 
+    Document   : login
+    Created on : 20 nov. 2022, 15:11:35
+    Author     : User
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,6 +15,15 @@
     <title>Sign in & Sign up Form</title>
   </head>
   <body>
+      <%
+		//HERE WE GETTING THE ATTRIBUTE DECLARED IN VALIDATE.JSP AND CHECKING IF IT IS NULL, THE USER WILL BE REDIRECTED TO LOGIN PAGE
+				String eid = (String)session.getAttribute("email");
+				if (eid != null)
+				{
+		%><!-- NOT A VALID USER, IF THE USER TRIES TO EXECUTE LOGGED IN PAGE DIRECTLY, ACCESS IS RESTRICTED -->
+                
+                    <%  response.sendRedirect("index.jsp");
+                                } %>
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
@@ -67,3 +83,4 @@
     <script src="script/app.js"></script>
   </body>
 </html>
+
