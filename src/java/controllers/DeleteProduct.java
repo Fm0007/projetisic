@@ -12,13 +12,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import services.ProduitService;
 
 /**
  *
  * @author User
  */
-@WebServlet(name = "DetailledProduct", urlPatterns = {"/DetailledProduct"})
-public class DetailledProduct extends HttpServlet {
+@WebServlet(name = "DeleteProduct", urlPatterns = {"/DeleteProduct"})
+public class DeleteProduct extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,8 +32,13 @@ public class DetailledProduct extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-      
-    }
+        ProduitService ps = new ProduitService();
+        int id;
+        id = Integer.parseInt(request.getParameter("id"));
+        ps.delete(ps.findById(id));
+        }
+    
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

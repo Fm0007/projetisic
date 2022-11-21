@@ -33,7 +33,7 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="products.html">
+                            <a class="nav-link" href="product.jsp">
                                 <i class="fas fa-shopping-cart"></i>
                                 Products
                             </a>
