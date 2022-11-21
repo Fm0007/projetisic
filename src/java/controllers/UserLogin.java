@@ -40,22 +40,23 @@ public class UserLogin extends HttpServlet {
         String email = request.getParameter("email");
         String password = User.MD5(request.getParameter("password"));
         User user = us.findByEmail(email);
-                // if user = null
         
-        if (user.getPassword().equals(password)) {
-            HttpSession session = request.getSession(true);
-            session.setAttribute("email", email);
-            if (user instanceof Client) {
-                response.sendRedirect("index.jsp");
-            }
+        if (user != null) {
+            if (user.getPassword().equals(password)) {
+                HttpSession session = request.getSession(true);
+                session.setAttribute("email", email);
+                if (user instanceof Client) {
+                    response.sendRedirect("index.jsp");
+                }
 
-            if (user instanceof Admin) {
-                response.sendRedirect("Admin/index.jsp");
-            }
+                if (user instanceof Admin) {
+                    response.sendRedirect("Admin/index.jsp");
+                }
 
-        } else {
+            } else {
                 // errors 
-            //pass incorrect
+                //pass incorrect
+            }
         }
 
     }
