@@ -39,7 +39,7 @@
             </div>
             <input type="submit" value="Login" class="btn solid" />
           </form>
-            <form action="/projetisic" method="GET" class="sign-up-form">
+            <form action="/UserRegister" method="GET" class="sign-up-form">
             <h2 class="title">Sign up</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
@@ -47,11 +47,11 @@
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" />
+              <input id="email" type="email" placeholder="Email" />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input id="password" type="password" placeholder="Password" />
             </div>
             <input type="submit" class="btn" value="Sign up" />
           </form>

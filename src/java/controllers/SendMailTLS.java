@@ -19,8 +19,8 @@ import javax.mail.internet.MimeMessage;
  * @author User
  */
 public class SendMailTLS {
-    static final String username = "Emetteur [AT] gmail [DOT] com";
-    static final String password = "password";
+    static final String username = "javaee@zohomail.com";
+    static final String password = "taHMB96JQTp9Gey";
  
     public static void send(String s) {
         Properties props = new Properties();
@@ -41,9 +41,9 @@ public class SendMailTLS {
         try {
  
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("Emetteur [AT] gmail [DOT] com"));
+            message.setFrom(new InternetAddress("javaee@zohomail.com"));
             message.setRecipients(Message.RecipientType.TO,
-                    InternetAddress.parse("Recepetrut [AT] gmail [DOT] com"));
+                    InternetAddress.parse("fmed12.vlt@gmail.com"));
             message.setSubject("Object");
             message.setText(s);
  
@@ -56,5 +56,8 @@ public class SendMailTLS {
         }
     }
  
+    
 }
+
+
 //Source : www.exelib.net

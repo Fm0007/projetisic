@@ -5,6 +5,7 @@
  */
 package controllers;
 
+import entities.Client;
 import entities.User;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,6 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import services.UserService;
 
 /**
  *
@@ -32,8 +34,12 @@ public class UserRegister extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        UserService us = new UserService();
         String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        String nom = request.getParameter("nom");
+        Client tmp = (Client) new User(email,password);
+        tmp.setNom(nom);
         
         
         
