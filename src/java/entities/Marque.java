@@ -7,6 +7,7 @@ package entities;
 
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,7 +24,7 @@ public class Marque {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id; 
     private String nom;
-    @OneToMany(mappedBy = "marque")
+    @OneToMany(mappedBy = "marque",fetch = FetchType.EAGER)
     private List<Produit> produits;
 
     public Marque() {

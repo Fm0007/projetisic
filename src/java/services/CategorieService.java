@@ -118,5 +118,22 @@ public class CategorieService implements IDao<Categorie> {
         }
         return categories;
         }
-    
+     public List<Categorie> listAll() {
+         List<Categorie> categories = null;
+         Session session = null;
+         Transaction tx = null;
+         try {
+             session = HibernateUtil.getSessionFactory().openSession();
+             tx = session.beginTransaction();
+             categories = session.getNamedQuery("findCategorie").list();
+             tx.commit();
+         } catch (HibernateException e) {
+             if (tx != null) {
+                 tx.rollback();
+             }
+         } finally {
+             session.close();
+         }
+         return categories;
+}
 }

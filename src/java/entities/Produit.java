@@ -8,10 +8,12 @@ package entities;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
 /**
@@ -19,6 +21,7 @@ import javax.persistence.OneToMany;
  * @author Lachgar
  */
 @Entity
+@NamedQuery(name = "findProduit", query = "select p.id , p.nom , p.designation, p.prix , p.image from Produit p")
 public class Produit implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,7 +37,7 @@ public class Produit implements Serializable {
     @ManyToOne
     private Marque marque;
     
-    @OneToMany(mappedBy = "produit")
+    @OneToMany(mappedBy = "produit",fetch = FetchType.EAGER)
     private List<LigneCommande> lignecommande;
 
     public Produit(String nom, String designation, double prix, String image, Categorie categorie, Marque marque) {
@@ -112,6 +115,11 @@ public class Produit implements Serializable {
 
     public void setNom(String nom) {
         this.nom = nom;
+    }
+
+    @Override
+    public String toString() {
+        return "Produit{" + "id=" + id + ", nom=" + nom + ", designation=" + designation + ", prix=" + prix + ", image=" + image + '}';
     }
     
     

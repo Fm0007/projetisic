@@ -7,7 +7,6 @@ package controllers;
 
 import com.google.gson.Gson;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,7 +34,7 @@ public class ListAllCategorie extends HttpServlet {
             throws ServletException, IOException {
        response.setContentType("application/json");
              Gson gson = new Gson();
-             response.getWriter().write(gson.toJson(cs.findAll()));
+             response.getWriter().write(gson.toJson(cs.listAll()));
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -50,7 +49,7 @@ public class ListAllCategorie extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+             processRequest(request, response);
     }
 
     /**

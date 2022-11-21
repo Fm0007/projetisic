@@ -39,11 +39,11 @@
             </div>
             <input type="submit" value="Login" class="btn solid" />
           </form>
-          <form action="#" class="sign-up-form">
+            <form action="/projetisic" method="GET" class="sign-up-form">
             <h2 class="title">Sign up</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              <input  id="nom" type="text" placeholder="Nom" />
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>

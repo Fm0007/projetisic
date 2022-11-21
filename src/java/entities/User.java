@@ -24,7 +24,7 @@ import javax.persistence.NamedQuery;
  */
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@NamedQuery(name = "findByEmail", query = "select c from Client c where c.email = :email ")
+@NamedQuery(name = "findByEmail", query = "select c from User c where c.email = :email ")
 public class User implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

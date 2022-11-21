@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,7 +29,7 @@ public class Facture implements Serializable {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date date;
     private double montant;
-    @OneToMany(mappedBy = "facture")
+    @OneToMany(mappedBy = "facture",fetch = FetchType.EAGER)
     private List<Commande> commandes;
 
     public Facture(Date date, double montant) {

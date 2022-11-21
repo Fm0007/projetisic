@@ -6,6 +6,7 @@
 package services;
 
 import dao.IDao;
+import entities.Produit;
 import entities.User;
 import java.util.List;
 import org.hibernate.HibernateException;
@@ -41,6 +42,7 @@ public class UserService implements IDao<User> {
                 session.close();
             } 
         }
+        
         
         return false;
     }
@@ -143,5 +145,22 @@ public class UserService implements IDao<User> {
         }
         return user;
     }
-    
+    public List<Produit> listAll() {
+         List<Produit> produits = null;
+         Session session = null;
+         Transaction tx = null;
+         try {
+             session = HibernateUtil.getSessionFactory().openSession();
+             tx = session.beginTransaction();
+             produits = session.getNamedQuery("find").list();
+             tx.commit();
+         } catch (HibernateException e) {
+             if (tx != null) {
+                 tx.rollback();
+             }
+         } finally {
+             session.close();
+         }
+         return produits;
+}
 }

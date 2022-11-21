@@ -23,7 +23,9 @@ import services.UserService;
  */
 @WebServlet(name = "UserLogin", urlPatterns = {"/UserLogin"})
 public class UserLogin extends HttpServlet {
+
     UserService us = new UserService();
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -35,29 +37,27 @@ public class UserLogin extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            String email = request.getParameter("email");
-            String password = User.MD5(request.getParameter("password"));
-            User user = us.findByEmail(email);
-            
-            if(user.getPassword().equals(password))
-            {
+        String email = request.getParameter("email");
+        String password = User.MD5(request.getParameter("password"));
+        User user = us.findByEmail(email);
+                // if user = null
+        
+        if (user.getPassword().equals(password)) {
             HttpSession session = request.getSession(true);
             session.setAttribute("email", email);
-                if(user instanceof Client) {
+            if (user instanceof Client) {
                 response.sendRedirect("index.jsp");
-                } 
-                else if(user instanceof Admin) {
-                    response.sendRedirect("newjsp.jsp");
-                } 
-            
-            
             }
-            
-            else {
+
+            if (user instanceof Admin) {
+                response.sendRedirect("newjsp.jsp");
+            }
+
+        } else {
                 // errors 
-                //pass incorrect
-            }
-            
+            //pass incorrect
+        }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

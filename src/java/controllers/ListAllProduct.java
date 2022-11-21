@@ -35,7 +35,7 @@ public class ListAllProduct extends HttpServlet {
             throws ServletException, IOException {
              response.setContentType("application/json");
              Gson gson = new Gson();
-             response.getWriter().write(gson.toJson(ps.findAll()));
+             response.getWriter().write(gson.toJson(ps.listAll()));
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
