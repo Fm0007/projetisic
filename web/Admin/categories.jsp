@@ -47,7 +47,7 @@
             </div>
             <!-- table container -->
             <a
-              href="add-product.jsp"
+              href="add-categorie.jsp"
               class="btn btn-primary btn-block text-uppercase mb-3">Ajouter une catégorie</a>
             <button class="btn btn-primary btn-block text-uppercase">
               Supprimer les catégories sélectionnées
