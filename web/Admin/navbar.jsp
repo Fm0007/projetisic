@@ -35,12 +35,22 @@
                         <a class="dropdown-item" href="#">Yearly Report</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="product.jsp">
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-shopping-cart"></i>
-                        Products
+                        <span>
+                            Gestion <i class="fas fa-angle-down"></i>
+                        </span>
                     </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="product.jsp">Produits</a>
+                        <a class="dropdown-item" href="categories.jsp">Catégories</a>
+                        <a class="dropdown-item" href="marque.jsp">Marques</a>
+                    </div>
                 </li>
+                
 
                 <li class="nav-item">
                     <a class="nav-link" href="accounts.html">

@@ -9,17 +9,7 @@ $(document).ready(function () {
         }
         
     });
-      $("#deleteProduct").click()(function () {
-        $.ajax({
-            url: "../DeleteProduct?id=" + $("#id").val(),
-            success: function (data, textStatus, jqXHR) {
-                remplirCategorie(data);
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.log("erreur");
-            }
-        });
-    });
+   
     
     
 function remplirCategorie(data) {
@@ -43,6 +33,7 @@ function remplirCategorie(data) {
         }
         liste.html(option);
     }
+    
   
       
 });

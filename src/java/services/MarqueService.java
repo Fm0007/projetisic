@@ -7,6 +7,7 @@ package services;
 
 import dao.IDao;
 import entities.Marque;
+import entities.Marque;
 import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -118,5 +119,22 @@ public class MarqueService implements IDao<Marque> {
         }
         return marques;
         }
-    
+    public List<Marque> listAll() {
+         List<Marque> marques = null;
+         Session session = null;
+         Transaction tx = null;
+         try {
+             session = HibernateUtil.getSessionFactory().openSession();
+             tx = session.beginTransaction();
+             marques = session.getNamedQuery("findMarque").list();
+             tx.commit();
+         } catch (HibernateException e) {
+             if (tx != null) {
+                 tx.rollback();
+             }
+         } finally {
+             session.close();
+         }
+         return marques;
+}
 }
