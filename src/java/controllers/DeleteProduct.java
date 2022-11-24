@@ -5,6 +5,7 @@
  */
 package controllers;
 
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -32,10 +33,15 @@ public class DeleteProduct extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         ProduitService ps = new ProduitService();
         int id;
         id = Integer.parseInt(request.getParameter("id"));
         ps.delete(ps.findById(id));
+        Gson gson = new Gson();
+        response.setContentType("application/json");
+        response.getWriter().write(gson.toJson(ps.listAll()));
+        
         }
     
 

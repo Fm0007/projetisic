@@ -6,19 +6,19 @@
 package controllers;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import services.CategorieService;
 
 /**
  *
  * @author User
  */
-@WebServlet(name = "AddProduct", urlPatterns = {"/AddProduct"})
-public class AddProduct extends HttpServlet {
+@WebServlet(name = "DeleteCaregorie", urlPatterns = {"/DeleteCaregorie"})
+public class DeleteCaregorie extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,15 +31,14 @@ public class AddProduct extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       String nom = request.getParameter("nom");
-       String designation = request.getParameter("designation");
-       String prix = request.getParameter("prix");
-       int cat = Integer.parseInt(request.getParameter("categorie"));
-       int marque = Integer.parseInt(request.getParameter("marque"));
-       
-       
-       
-    }
+        CategorieService ps = new CategorieService();
+        int id;
+        id = Integer.parseInt(request.getParameter("id"));
+        ps.delete(ps.findById(id));
+        response.setStatus(HttpServletResponse.SC_NO_CONTENT);
+        }
+    
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

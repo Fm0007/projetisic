@@ -7,6 +7,7 @@ package entities;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -31,10 +32,10 @@ public class Produit implements Serializable {
     private double prix;
     private String image;
     
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.DETACH)
     private Categorie categorie;
     
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.DETACH)
     private Marque marque;
     
     @OneToMany(mappedBy = "produit",fetch = FetchType.EAGER)

@@ -1,14 +1,20 @@
 $(document).ready(function () {
-    $.ajax({  
-        url: "../ListAllCategorie",
-        success: function (data, textStatus, jqXHR) {
-            remplirCategorie(data);
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-            console.log("erreur");
-        }
+                $.ajax({  
+               url: "../ListAllCategorie",
+               success: function (data, textStatus, jqXHR) {
+                   remplirCategorie(data);
+               },
+               error: function (jqXHR, textStatus, errorThrown) {
+                   console.log("erreur");
+               }
+
+               });
+               
         
-    });
+       
+ 
+        
+    
    
     
     
@@ -21,7 +27,7 @@ function remplirCategorie(data) {
                     +" <td id='id' class='tm-product-name'>"+ data[i][0] +"</td>"
                    +" <td>" + data[i][1] + "</td>"
                   + " <td>"
-                   +  " <a id='deleteCategorie'  class='tm-product-delete-link'>"
+                   +  " <a href='../DeleteCaregorie?id=" + data[i][0] +"'  class='tm-product-delete-link'>"
                     +   " <i class='far fa-trash-alt tm-product-delete-icon'></i>"
                   +   " </a>"
                  +  " </td>"

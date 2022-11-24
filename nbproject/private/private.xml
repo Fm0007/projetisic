@@ -3,55 +3,52 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/Admin/marque.jsp</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/Admin/edit-product.html</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/DetailledProduct.java</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/remplirProduit_1.js</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/test/Test.java</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/ListAllProduct.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/login.html</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/Admin/footer.jsp</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/remplirCategorieAdmin.js</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/Admin/categories.jsp</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/Admin/navbar.jsp</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/newjsp.jsp</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/entities/User.java</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/entities/Commande.java</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/entities/Marque.java</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/entities/Produit.java</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/services/MarqueService.java</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/services/CategorieService.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/util/HibernateUtil.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/dao/IDao.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/header.jsp</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/menu.jsp</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/entities/LigneCommandePK.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/jquery-3.3.1.min.js</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/hibernate.cfg.xml</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/UserLogout.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/entities/LigneCommande.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/Chart.js</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/test/Test.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/remplirProduit_1.js</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/entities/Admin.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/entities/Commande.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/entities/Produit.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/sweet.js</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/UserRegister.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/Admin/product.jsp</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/entities/Client.java</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/Admin/js/bootstrap.min.js</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/shop.jsp</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/css/style.css</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/remplirMarqueAdmin.js</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/remplirComboBoxMarque.js</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/remplirCategorie.js</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/DeleteCaregorie.java</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/detail.html</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/js/main.js</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/services/UserService.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/services/CommandeService.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/services/ProduitService.java</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/ListAllMarque.java</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/remplirProduitAdmin.js</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/index.jsp</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/services/FactureService.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/css/login.css</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/DeleteProduct.java</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/login.jsp</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/ListAllCategorie.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/Admin/index.html</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/services/LigneCommandeService.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/SendMailTLS.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/app.js</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/header.jsp</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/AddProduct.java</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/menu.jsp</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/entities/LigneCommandePK.java</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/remplirProduit.js</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/moment.js</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/entities/Facture.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/shop.html</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/remplirComboBoxCategorie.js</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/img/product/PH.jpg</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/entities/Categorie.java</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/Admin/add-product.jsp</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/UserLogin.java</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/Admin/add-marque.jsp</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/entities/LigneCommande.java</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/UserLogout.java</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/AddMarque.java</file>
         </group>
     </open-files>
 </project-private>

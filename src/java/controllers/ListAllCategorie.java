@@ -35,6 +35,7 @@ public class ListAllCategorie extends HttpServlet {
        response.setContentType("application/json");
              Gson gson = new Gson();
              response.getWriter().write(gson.toJson(cs.listAll()));
+             
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

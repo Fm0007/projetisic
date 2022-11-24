@@ -23,12 +23,12 @@ import util.HibernateUtil;
  */
 public class Test {
     public static void main(String[] args) {
-        //HibernateUtil.getSessionFactory().openSession();
+        HibernateUtil.getSessionFactory().openSession();
         //UserService cs = new UserService();
         //cs.create(new Admin("admin@gmail.com", "123456"));
        // ProduitService cs = new ProduitService();
         //for(Produit c: cs.listAll()) System.out.println(c);
-        SendMailTLS.send("test");
+        
     }
 
 }

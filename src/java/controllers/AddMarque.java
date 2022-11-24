@@ -5,6 +5,7 @@
  */
 package controllers;
 
+import entities.Marque;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -12,14 +13,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import services.MarqueService;
 
 /**
  *
  * @author User
  */
-@WebServlet(name = "AddProduct", urlPatterns = {"/AddProduct"})
-public class AddProduct extends HttpServlet {
-
+@WebServlet(name = "AddMarque", urlPatterns = {"/AddMarque"})
+public class AddMarque extends HttpServlet {
+    MarqueService ms = new MarqueService();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -31,14 +33,9 @@ public class AddProduct extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       String nom = request.getParameter("nom");
-       String designation = request.getParameter("designation");
-       String prix = request.getParameter("prix");
-       int cat = Integer.parseInt(request.getParameter("categorie"));
-       int marque = Integer.parseInt(request.getParameter("marque"));
-       
-       
-       
+        String nom = request.getParameter("nom");
+        ms.create(new Marque(nom));
+        response.sendRedirect("Admin/marque.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

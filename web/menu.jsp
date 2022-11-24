@@ -52,7 +52,7 @@
 
                             if (eid != null) {
                                 User user = new UserService().findByEmail(eid);
-                                if (user instanceof Admin) { %>
+                                if (user instanceof Admin) {  %>
                                 <div class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown"> Admin </a>
                             <div class="dropdown-menu rounded-0 m-0">

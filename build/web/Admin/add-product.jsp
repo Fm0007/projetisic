@@ -81,7 +81,7 @@
                       for="categorie"
                       >Categorie</label
                     >
-                    <select
+                    <select name="categorie"
                       class="custom-select tm-select-accounts"
                       id="categorie"
                     > <!-- jquery list categorie -->
@@ -93,7 +93,7 @@
                       for="marque"
                       >Marque</label
                     >
-                    <select
+                    <select name ="marque"
                       class="custom-select tm-select-accounts"
                       id="marque"
                     > 
