@@ -120,7 +120,7 @@
                   />
                 </div>
               </div>
-              <div class="col-12">
+              <div class="col-12 mt-4">
                 <button type="submit" class="btn btn-primary btn-block text-uppercase">Add Product Now</button>
               </div>
             </form>
