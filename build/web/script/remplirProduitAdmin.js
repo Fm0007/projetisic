@@ -2,7 +2,7 @@ $(document).ready(function () {
     $.ajax({  
         url: "../ListAllProduct",
         success: function (data, textStatus, jqXHR) {
-            remplirCategorie(data);
+            remplirProduit(data);
         },
         error: function (jqXHR, textStatus, errorThrown) {
             console.log("erreur");
@@ -15,7 +15,7 @@ $(document).ready(function () {
         $.ajax({
             url: "../DeleteProduct?id=" + id,
             success: function (data, textStatus, jqXHR) {     
-                remplirCategorie(data);     
+                remplirProduit(data);     
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log("erreur");
@@ -27,12 +27,12 @@ $(document).ready(function () {
 
     window.deleteProduct=deleteProduct;
     
-function remplirCategorie(data) {
+function remplirProduit(data) {
         var liste = $("#listproduit");
         var option = "";
         for (i = 0; i < data.length ; i++) {
             option += "<tr>"
-                   +" <th scope='row'><input type='checkbox' /></th>"
+                   
                     +" <td class='tm-product-name'>"+ data[i][0] +"</td>"
                    +" <td>" + data[i][1] + "</td>"
                    +" <td>" + data[i][2] + "</td>"

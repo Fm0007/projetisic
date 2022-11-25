@@ -32,9 +32,9 @@
             <div class="tm-product-table-container">
               <table class="table table-hover tm-table-small tm-product-table">
                 <thead>
-                    <h6 style=""> Liste des Catégories </h6>
+                    <h6 class="tm-block-title"> Liste des Catégories </h6>
                   <tr>
-                    <th scope="col">&nbsp;</th>
+                    
                     <th scope="col">ID</th>
                     <th scope="col">Nom</th>
                     <th scope="col">&nbsp;</th>
@@ -49,9 +49,7 @@
             <a
               href="add-categorie.jsp"
               class="btn btn-primary btn-block text-uppercase mb-3">Ajouter une catégorie</a>
-            <button class="btn btn-primary btn-block text-uppercase">
-              Supprimer les catégories sélectionnées
-            </button>
+            
           </div>
         </div>
         

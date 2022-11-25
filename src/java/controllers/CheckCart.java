@@ -6,20 +6,23 @@
 package controllers;
 
 import com.google.gson.Gson;
+import entities.Client;
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import services.CategorieService;
+import javax.servlet.http.HttpSession;
+import services.UserService;
 
 /**
  *
  * @author User
  */
-@WebServlet(name = "DeleteCaregorie", urlPatterns = {"/DeleteCaregorie"})
-public class DeleteCaregorie extends HttpServlet {
+@WebServlet(name = "CheckCart", urlPatterns = {"/CheckCart"})
+public class CheckCart extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,15 +35,25 @@ public class DeleteCaregorie extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        CategorieService ps = new CategorieService();
-        int id;
-        id = Integer.parseInt(request.getParameter("id"));
-        ps.delete(ps.findById(id));
-        Gson gson = new Gson();
         response.setContentType("application/json");
-        response.getWriter().write(gson.toJson(ps.listAll()));
+        Gson gson = new Gson();
+             
+        HttpSession session = request.getSession();
+        String eid = (String)session.getAttribute("email");
+        if (eid == null) {
+            response.getWriter().write(gson.toJson(0));
+        }
+        else {
+        
+            UserService us = new UserService();
+            Client tmp = (Client) us.findByEmail(eid);
+            
+            
+        
+        }
+        
+        }
     
-    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

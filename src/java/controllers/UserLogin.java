@@ -50,7 +50,7 @@ public class UserLogin extends HttpServlet {
                 }
 
                 if (user instanceof Admin) {
-                    response.sendRedirect("Admin/index.jsp");
+                    response.sendRedirect("./Admin/index.jsp");
                 }
 
             } else {

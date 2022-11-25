@@ -8,32 +8,32 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <title>EShopper - Bootstrap Shop Template</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
+    <head>
+        <meta charset="utf-8">
+        <title>EShopper - Bootstrap Shop Template</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Free HTML Templates" name="keywords">
+        <meta content="Free HTML Templates" name="description">
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-    
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
 
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-    <script src="script/jquery-3.3.1.min.js" type="text/javascript"></script>
-    <script src="script/remplirCategorie.js" type="text/javascript"></script>
-    
-</head>
+        <!-- Libraries Stylesheet -->
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+        <script src="script/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <script src="script/remplirCategorie.js" type="text/javascript"></script>
+
+    </head>
     <body>
         <div class="container-scroller">
             <!-- partial:partials/_navbar.html -->
@@ -42,7 +42,43 @@
             <div class="container-fluid page-body-wrapper">
                 <!-- partial:partials/_sidebar.html -->
                 <%@include file="menu.jsp" %>
-                
+                <div id="header-carousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" style="height: 410px;">
+                            <img class="img-fluid" src="img/carousel-1.jpg" alt="Image">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                <div class="p-3" style="max-width: 700px;">
+                                    <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
+                                    <h3 class="display-4 text-white font-weight-semi-bold mb-4">Fashionable Dress</h3>
+                                    <a href="" class="btn btn-light py-2 px-3">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" style="height: 410px;">
+                            <img class="img-fluid" src="img/carousel-2.jpg" alt="Image">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                <div class="p-3" style="max-width: 700px;">
+                                    <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
+                                    <h3 class="display-4 text-white font-weight-semi-bold mb-4">Reasonable Price</h3>
+                                    <a href="" class="btn btn-light py-2 px-3">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
+                        <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                            <span class="carousel-control-prev-icon mb-n2"></span>
+                        </div>
+                    </a>
+                    <a class="carousel-control-next" href="#header-carousel" data-slide="next">
+                        <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                            <span class="carousel-control-next-icon mb-n2"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>            
     <!-- Featured Start -->
     <div class="container-fluid pt-5">
         <div class="row px-xl-5 pb-3">
@@ -78,7 +114,7 @@
     <!-- Categories Start -->
     <div class="container-fluid pt-5">
         <div id="categories2" class="row px-xl-5 pb-3">
-            
+
         </div>
     </div>
     <!-- Categories End -->
@@ -464,7 +500,7 @@
     <!-- Vendor End -->
 
 
-     <%@include file="footer.jsp"%>
+    <%@include file="footer.jsp"%>
 
 
     <!-- Back to Top -->
@@ -483,7 +519,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    
+
 </body>
 
 </html>

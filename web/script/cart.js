@@ -1,8 +1,14 @@
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 $(document).ready(function () {
     $.ajax({  
-        url: "../ListAllProduct",
+        url: "../CheckCart",
         success: function (data, textStatus, jqXHR) {
-            remplirProduit(data);
+            cartCount(data);
         },
         error: function (jqXHR, textStatus, errorThrown) {
             console.log("erreur");
@@ -27,22 +33,11 @@ $(document).ready(function () {
 
     window.deleteProduct=deleteProduct;
     
-function remplirProduit(data) {
-        var liste = $("#listproduit");
+function cartCount(data) {
+        var liste = $("#cart");
         var option = "";
         for (i = 0; i < data.length ; i++) {
-            option += "<tr>"
-                   
-                    +" <td class='tm-product-name'>"+ data[i][0] +"</td>"
-                   +" <td>" + data[i][1] + "</td>"
-                   +" <td>" + data[i][2] + "</td>"
-                   + "<td>" + data[i][3] + "</td>"
-                  + " <td>"
-                   +  " <a  onclick='deleteProduct(" + data[i][0] + ")'  class='tm-product-delete-link'>"
-                    +   " <i class='far fa-trash-alt tm-product-delete-icon'></i>"
-                  +   " </a>"
-                 +  " </td>"
-               +  " </tr>"
+            option += "<span class='badge'>"+ data[i]+"</span>"
                     
         ;
         }
@@ -53,3 +48,5 @@ function remplirProduit(data) {
   
       
 });
+
+

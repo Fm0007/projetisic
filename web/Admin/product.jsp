@@ -33,9 +33,9 @@
             <div class="tm-product-table-container">
               <table class="table table-hover tm-table-small tm-product-table">
                 <thead>
-                    <h6 style=""> Liste des Produits </h6>
+                    <h6 class="tm-block-title"> Liste des Produits </h6>
                   <tr>
-                    <th scope="col">&nbsp;</th>
+                    
                     <th scope="col">ID</th>
                     <th scope="col">Nom de produit</th>
                     <th scope="col">Designation</th>
@@ -52,9 +52,7 @@
             <a
               href="add-product.jsp"
               class="btn btn-primary btn-block text-uppercase mb-3">Ajouter un produit</a>
-            <button class="btn btn-primary btn-block text-uppercase">
-              Supprimer les produits sélectionnées
-            </button>
+            
           </div>
         </div>
      

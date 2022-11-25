@@ -11,7 +11,21 @@ $(document).ready(function () {
                });
                
         
-       
+       function deleteCategorie(id) {
+        $.ajax({
+            url: "../DeleteCategorie?id=" + id,
+            success: function (data, textStatus, jqXHR) {     
+                remplirCategorie(data);     
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log("erreur");
+            }
+
+        });
+
+    }
+    
+    window.deleteCategorie=deleteCategorie;
  
         
     
@@ -23,11 +37,11 @@ function remplirCategorie(data) {
         var option = "";
         for (i = 0; i < data.length ; i++) {
             option += "<tr>"
-                   +" <th scope='row'><input type='checkbox' /></th>"
+                   
                     +" <td id='id' class='tm-product-name'>"+ data[i][0] +"</td>"
                    +" <td>" + data[i][1] + "</td>"
                   + " <td>"
-                   +  " <a href='../DeleteCaregorie?id=" + data[i][0] +"'  class='tm-product-delete-link'>"
+                   +  " <a href='deleteCategorie(" + data[i][0] +")'  class='tm-product-delete-link'>"
                     +   " <i class='far fa-trash-alt tm-product-delete-icon'></i>"
                   +   " </a>"
                  +  " </td>"

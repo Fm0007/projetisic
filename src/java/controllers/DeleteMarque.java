@@ -13,14 +13,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import services.ProduitService;
+import services.MarqueService;
 
 /**
  *
  * @author User
  */
-@WebServlet(name = "DeleteProduct", urlPatterns = {"/DeleteProduct"})
-public class DeleteProduct extends HttpServlet {
+@WebServlet(name = "DeleteMarque", urlPatterns = {"/DeleteMarque"})
+public class DeleteMarque extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,7 +34,7 @@ public class DeleteProduct extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        ProduitService ps = new ProduitService();
+        MarqueService ps = new MarqueService();
         int id;
         id = Integer.parseInt(request.getParameter("id"));
         ps.delete(ps.findById(id));

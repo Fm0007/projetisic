@@ -5,21 +5,20 @@
  */
 package controllers;
 
-import com.google.gson.Gson;
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import services.CategorieService;
 
 /**
  *
  * @author User
  */
-@WebServlet(name = "DeleteCaregorie", urlPatterns = {"/DeleteCaregorie"})
-public class DeleteCaregorie extends HttpServlet {
+@WebServlet(name = "AddtoCart", urlPatterns = {"/AddtoCart"})
+public class AddtoCart extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,14 +31,19 @@ public class DeleteCaregorie extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        CategorieService ps = new CategorieService();
-        int id;
-        id = Integer.parseInt(request.getParameter("id"));
-        ps.delete(ps.findById(id));
-        Gson gson = new Gson();
-        response.setContentType("application/json");
-        response.getWriter().write(gson.toJson(ps.listAll()));
-    
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet AddtoCart</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet AddtoCart at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
