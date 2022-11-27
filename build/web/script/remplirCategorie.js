@@ -9,6 +9,19 @@ $(document).ready(function () {
             console.log("erreur");
         } 
     });
+    $.ajax({  
+        url: "./CheckCart",
+        success: function (data, textStatus, jqXHR) {
+            cartCount(data);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log("erreur");
+        }
+        
+    });
+    
+    // fct remplissage de categorie
+    
 function remplirCategorie(data) {
         var liste = $("#categories");
         var option = "";
@@ -17,6 +30,9 @@ function remplirCategorie(data) {
         }
         liste.html(option);
     }
+    
+    // fct remplissage de categorie
+    
 function remplirCategorie2(data) {
         var liste = $("#categories2");
         var option = "";
@@ -33,6 +49,38 @@ function remplirCategorie2(data) {
         }
         liste.html(option);
     }
+    
+    // fonction de NB produit panier
+function cartCount(data) {
+        var liste = $("#cart");
+        var option = "<span class='badge'>" + data + "</span>";
+       
+        liste.html(option);
+    }
+
+function addToCart(id,nb) {
+        $.ajax({
+            url: "AddtoCart?id=" + id + "&nb="+nb,
+            success: function (data, textStatus, jqXHR) {     
+                if(data===-1){
+                    alert('Veillez se connecter');
+                }
+                else {
+                  cartCount(data);  
+                }
+                     
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log("erreur");
+            }
+
+        });
+
+    }
+    
+    window.addToCart=addToCart;
+  
+      
 
 
 

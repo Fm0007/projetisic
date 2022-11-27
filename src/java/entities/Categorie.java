@@ -24,6 +24,7 @@ import javax.persistence.OneToMany;
 
 @Entity
 @NamedQuery(name = "findCategorie", query = "select c.id , c.nom from Categorie c")
+
 public class Categorie implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

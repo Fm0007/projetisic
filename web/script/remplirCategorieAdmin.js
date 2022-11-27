@@ -13,7 +13,7 @@ $(document).ready(function () {
         
        function deleteCategorie(id) {
         $.ajax({
-            url: "../DeleteCategorie?id=" + id,
+            url: "../DeleteCaregorie?id=" + id,
             success: function (data, textStatus, jqXHR) {     
                 remplirCategorie(data);     
             },
@@ -41,7 +41,7 @@ function remplirCategorie(data) {
                     +" <td id='id' class='tm-product-name'>"+ data[i][0] +"</td>"
                    +" <td>" + data[i][1] + "</td>"
                   + " <td>"
-                   +  " <a href='deleteCategorie(" + data[i][0] +")'  class='tm-product-delete-link'>"
+                   +  " <a onclick='deleteCategorie(" + data[i][0] +")'  class='tm-product-delete-link'>"
                     +   " <i class='far fa-trash-alt tm-product-delete-icon'></i>"
                   +   " </a>"
                  +  " </td>"

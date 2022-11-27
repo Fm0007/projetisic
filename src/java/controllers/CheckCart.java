@@ -7,6 +7,7 @@ package controllers;
 
 import com.google.gson.Gson;
 import entities.Client;
+import entities.Commande;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import services.CommandeService;
 import services.UserService;
 
 /**
@@ -37,7 +39,7 @@ public class CheckCart extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("application/json");
         Gson gson = new Gson();
-             
+             CommandeService cs = new CommandeService();
         HttpSession session = request.getSession();
         String eid = (String)session.getAttribute("email");
         if (eid == null) {
@@ -47,9 +49,17 @@ public class CheckCart extends HttpServlet {
         
             UserService us = new UserService();
             Client tmp = (Client) us.findByEmail(eid);
+            Commande panier = cs.getPanier();
+            if(panier==null){
+             response.getWriter().write(gson.toJson(0));   
+            }
+            else{
+                int send = panier.getLignecommande().size();
             
+                response.getWriter().write(gson.toJson(send)); 
+            }
             
-        
+
         }
         
         }

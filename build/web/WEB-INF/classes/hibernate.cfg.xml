@@ -18,5 +18,6 @@
     <mapping class="entities.Categorie"/>
     <mapping class="entities.Facture"/>
     <mapping class="entities.Admin"/>
+    <mapping class="entities.LigneCommandePK"/>
   </session-factory>
 </hibernate-configuration>

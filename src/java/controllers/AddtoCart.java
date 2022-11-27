@@ -5,13 +5,29 @@
  */
 package controllers;
 
+import com.google.gson.Gson;
+import entities.Categorie;
+import entities.Client;
+import entities.Commande;
+import entities.LigneCommande;
+import entities.LigneCommandePK;
+import entities.Produit;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
+import javax.persistence.EntityManager;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import services.CommandeService;
+import services.LigneCommandeService;
+import services.ProduitService;
+import services.UserService;
+
 
 /**
  *
@@ -31,19 +47,55 @@ public class AddtoCart extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet AddtoCart</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet AddtoCart at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        HttpSession session = request.getSession();
+        String eid = (String)session.getAttribute("email");
+        if (eid == null) {
+             response.setContentType("application/json");
+             Gson gson = new Gson();
+             response.getWriter().write(gson.toJson(-1));
         }
+        else {
+            CommandeService cs = new CommandeService();
+            UserService us = new UserService();
+            LigneCommandeService ls = new LigneCommandeService();
+            ProduitService ps = new ProduitService();
+            Client tmp = (Client) us.findByEmail(eid);
+            Commande panier = cs.getPanier();
+            if(panier==null){
+                
+                panier = new Commande(new Date(),tmp);
+                cs.create(panier);
+                
+            }
+            int commandeid = panier.getId();
+            int idProduit = Integer.parseInt(request.getParameter("id"));
+            int nb = Integer.parseInt(request.getParameter("nb"));
+            
+            // ID de la commande en cours (a ajouter dans la couche service)
+            
+            LigneCommandePK lcpk = new LigneCommandePK(idProduit, commandeid);
+            LigneCommande lctmp = ls.getByPK(lcpk);
+            if(lctmp==null){
+                ls.create(new LigneCommande(lcpk, (ps.findById(idProduit)).getPrix() ,nb ));
+            }
+            if(lctmp!=null) {
+              //
+                lctmp.setQuantité(lctmp.getQuantité()+nb);
+                lctmp.setPrixVente((ps.findById(idProduit)).getPrix());
+                
+                ls.update(lctmp);
+            }
+            
+                
+            RequestDispatcher rd = request.getRequestDispatcher("CheckCart");
+             rd.forward(request,response);
+
+        }
+        
+        
+        
+        
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

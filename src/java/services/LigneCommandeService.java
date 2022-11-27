@@ -6,7 +6,9 @@
 package services;
 
 import dao.IDao;
+import entities.Commande;
 import entities.LigneCommande;
+import entities.LigneCommandePK;
 import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -118,5 +120,45 @@ public class LigneCommandeService implements IDao<LigneCommande> {
         }
         return ligneCommandes;
         }
+    
+    public LigneCommande getByPK(LigneCommandePK lcpk) {
+        LigneCommande lc = null;
+        Session session = null;
+        Transaction tx = null;
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            tx = session.beginTransaction();
+            lc = (LigneCommande) session.getNamedQuery("findByLigneCommandePK").setParameter("lck", lcpk).uniqueResult();
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+        } finally {
+            session.close();
+        }
+        return lc;
+                
+    }
+    
+    public List<LigneCommande> getByCommande(Commande c) {
+        List<LigneCommande> lc = null;
+        Session session = null;
+        Transaction tx = null;
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            tx = session.beginTransaction();
+            lc =  session.getNamedQuery("findLigneCommandeByCommande").setParameter("c", c.getId()).list();
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+        } finally {
+            session.close();
+        }
+        return lc;
+                
+    }
     
 }

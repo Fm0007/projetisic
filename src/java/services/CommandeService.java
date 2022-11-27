@@ -119,4 +119,22 @@ public class CommandeService implements IDao<Commande> {
         return commandes;
         }
     
+    public Commande getPanier() {
+        Commande commande = null;
+        Session session = null;
+        Transaction tx = null;
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            tx = session.beginTransaction();
+            commande = (Commande) session.getNamedQuery("getPanier").uniqueResult();
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+        } finally {
+            session.close();
+        }
+        return commande;
+    }
 }
