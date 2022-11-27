@@ -21,7 +21,7 @@
 
 <body id="reportsPage">
     <div class="" id="home">
-        <!-- NavBar Include -->
+             <%@include file="navbar.jsp"%>
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -283,15 +283,7 @@
                 </div>
             </div>
         </div>
-        <footer class="tm-footer row tm-mt-small">
-            <div class="col-12 font-weight-light">
-                <p class="text-center text-white mb-0 px-4 small">
-                    Copyright &copy; <b>2018</b> All rights reserved. 
-                    
-                    Design: <a rel="nofollow noopener" href="https://templatemo.com" class="tm-footer-link">Template Mo</a>
-                </p>
-            </div>
-        </footer>
+        <%@include file="footer.jsp"%>
     </div>
 
     <script src="js/jquery-3.3.1.min.js"></script>
