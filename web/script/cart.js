@@ -21,7 +21,7 @@ $(document).ready(function () {
     
     
 function remplirCart(data) {
-         totale = 0 ;
+        totale = 0 ;
         var liste = $("#listcart");
         var option = "";
         for (i = 0; i < data.length ; i++) {
@@ -57,7 +57,9 @@ function minus(idproduit,idcommande) {
         $.ajax({
             url: "UpdateCart?idproduit=" + idproduit +"&idcommande="+idcommande+"&arg=1",
             success: function (data, textStatus, jqXHR) {     
-                remplirCart(data);     
+                remplirCart(data);    
+                cartCount(data);
+                total(totale);
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log("erreur");

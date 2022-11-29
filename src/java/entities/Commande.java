@@ -27,6 +27,7 @@ import javax.persistence.TemporalType;
  */
 @NamedQueries({
     @NamedQuery(name = "getPanier", query = "select c from Commande c where c.status = 'en cours'"),
+    @NamedQuery(name = "getAllcommande", query = "select c.id , c.date , c.client.nom , c.client.email ,c.client.adresse , c.status from Commande c "),
     })
 @Entity
 public class Commande implements Serializable{

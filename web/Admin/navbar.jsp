@@ -40,7 +40,7 @@
 
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-shopping-cart""></i>
+                        <i class="fas fa-shopping-cart"></i>
                         <span>
                             Gestion <i class="fas fa-angle-down"></i>
                         </span>
@@ -53,10 +53,10 @@
                 </li>
                 
                 <li class="nav-item">
-                    <a class="nav-link active" href="listeCommande.jsp">
+                    <a class="nav-link" href="listeCommande.jsp">
                         <i class="fas fa-tachometer-alt"></i>
                         Liste Commande
-                        <span class="sr-only">(current)</span>
+                        <span class="sr-only"></span>
                     </a>
                 </li>
 

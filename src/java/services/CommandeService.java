@@ -137,4 +137,24 @@ public class CommandeService implements IDao<Commande> {
         }
         return commande;
     }
+    
+    public List<Commande> getAll() {
+        List<Commande> commande = null;
+        Session session = null;
+        Transaction tx = null;
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            tx = session.beginTransaction();
+            commande =  session.getNamedQuery("getAllcommande").list();
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+        } finally {
+            session.close();
+        }
+        return commande;
+    }
+    
 }
