@@ -49,7 +49,7 @@ public class CheckCart extends HttpServlet {
         
             UserService us = new UserService();
             Client tmp = (Client) us.findByEmail(eid);
-            Commande panier = cs.getPanier();
+            Commande panier = cs.getPanier(tmp);
             if(panier==null){
              response.getWriter().write(gson.toJson(0));   
             }

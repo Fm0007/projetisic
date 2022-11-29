@@ -6,6 +6,7 @@
 package services;
 
 import dao.IDao;
+import entities.Client;
 import entities.Commande;
 import java.util.List;
 import org.hibernate.HibernateException;
@@ -119,14 +120,14 @@ public class CommandeService implements IDao<Commande> {
         return commandes;
         }
     
-    public Commande getPanier() {
+    public Commande getPanier(Client client) {
         Commande commande = null;
         Session session = null;
         Transaction tx = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            commande = (Commande) session.getNamedQuery("getPanier").uniqueResult();
+            commande = (Commande) session.getNamedQuery("getPanier").setParameter("mail", client.getEmail()).uniqueResult();
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {
@@ -156,5 +157,25 @@ public class CommandeService implements IDao<Commande> {
         }
         return commande;
     }
+    
+    public List<Commande> getByStatus(String status) {
+        List<Commande> commande = null;
+        Session session = null;
+        Transaction tx = null;
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            tx = session.beginTransaction();
+            commande =  session.getNamedQuery("getByStatus").setParameter("status", status).list();
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+        } finally {
+            session.close();
+        }
+        return commande;
+    }
+    
     
 }

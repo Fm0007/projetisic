@@ -12,9 +12,9 @@ $(document).ready(function () {
     $("#status").change(function () {
         $.ajax({
             url: "../FindCommandeByStatus",
-            data: {role: $(this).val()},
+            data: {status: $(this).val()},
             success: function (data, textStatus, jqXHR) {
-                remplirUser(data);
+                remplirCategorie(data);
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log("erreur");
@@ -35,8 +35,8 @@ function remplirCategorie(data) {
         var option = "";
         for (i = 0; i < data.length ; i++) {
             if(data[i][5]==="en cours") {tmp = "pending"; }
-            if(data[i][5]==="payé") {tmp = "moving"; }
-            if(data[i][5]==="livré") {tmp = "moving"; }
+            if(data[i][5]==="Valide") {tmp = "moving"; }
+            if(data[i][5]==="Livré") {tmp = "moving"; }
             if(data[i][5]==="annulé") {tmp = "cancelled"; }
             option +=  "<tr> "
 + "                                   <th scope='row'><b>#"+data[i][0]+"</b></th> "

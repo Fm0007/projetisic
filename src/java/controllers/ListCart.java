@@ -52,7 +52,7 @@ public class ListCart extends HttpServlet {
             LigneCommandeService ls = new LigneCommandeService();
             ProduitService ps = new ProduitService();
             Client tmp = (Client) us.findByEmail(eid);
-            Commande panier = cs.getPanier();
+            Commande panier = cs.getPanier(tmp);
             if(panier==null){
             
                 

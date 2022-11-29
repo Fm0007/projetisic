@@ -40,15 +40,17 @@ public class Test {
         CommandeService cs = new CommandeService();
         
        LigneCommandeService ls = new LigneCommandeService();
-        System.out.println(cs.getPanier().getLignecommande().get(0).getProduit().getNom());
+        //System.out.println(cs.getPanier().getLignecommande().get(0).getProduit().getNom());
       //  Client tmp = (Client) us.findByEmail("fm@gmail.com");
        // Commande cat = cs.findById(1);
      //  int nb = Integer.parseInt("1");
         //ls.create(new LigneCommande(new LigneCommandePK(100,1),100,1));
          
               //  ls.delete(tmpp);
-                
-        //for(Produit c: cs.listAll()) System.out.println(c);
+                Commande tmp = cs.findById(3);
+                tmp.setStatus("Valide");
+                cs.update(tmp);
+        //for(Object c: cs.getByStatus("Validé")) System.out.println(c);
     }
 
 }

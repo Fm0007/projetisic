@@ -48,10 +48,11 @@
                       class="custom-select tm-select-accounts"
                       id="status"
                     > 
-                        <option value="1">en cours</option>
-                        <option value="2">Validé</option>
-                        <option value="3">Livré</option>
-                        <option value="4">annulé</option>
+                        <option value="0" >Tout</option>
+                        <option value="en cours">en cours</option>
+                        <option value="Validé">Validé</option>
+                        <option value="Livré">Livré</option>
+                        <option value="annulé">annulé</option>
                     </select>
                   </div>
                   

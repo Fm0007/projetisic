@@ -26,9 +26,10 @@ import javax.persistence.TemporalType;
  * @author Lachgar
  */
 @NamedQueries({
-    @NamedQuery(name = "getPanier", query = "select c from Commande c where c.status = 'en cours'"),
+    @NamedQuery(name = "getPanier", query = "select c from Commande c where c.status = 'en cours' AND c.client.email = :mail "),
     @NamedQuery(name = "getAllcommande", query = "select c.id , c.date , c.client.nom , c.client.email ,c.client.adresse , c.status from Commande c "),
-    })
+    @NamedQuery(name = "getByStatus", query = "select c.id , c.date , c.client.nom , c.client.email ,c.client.adresse , c.status  from Commande c where c.status = :status")
+})
 @Entity
 public class Commande implements Serializable{
 
