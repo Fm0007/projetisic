@@ -50,9 +50,9 @@
                     > 
                         <option value="0" >Tout</option>
                         <option value="en cours">en cours</option>
-                        <option value="Validé">Validé</option>
+                        <option value="Valide">Validé</option>
                         <option value="Livré">Livré</option>
-                        <option value="annulé">annulé</option>
+                        <option value="annule">annulé</option>
                     </select>
                   </div>
                   

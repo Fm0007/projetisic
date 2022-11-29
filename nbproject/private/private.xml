@@ -3,60 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/Admin/marque.jsp</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/remplirCategorieAdmin.js</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/newjavascript.js</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/Admin/navbar.jsp</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/detail.jsp</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/services/MarqueService.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/services/CategorieService.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/checkout.html</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/DeleteCaregorie.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/cart.js</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/header.jsp</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/services/FactureService.java</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/ListCart.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/menu.jsp</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/entities/LigneCommandePK.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/test/Test1.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/hibernate.cfg.xml</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/bootstrap.bundle.min.js</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/UpdateCart.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/Admin/add-product.jsp</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/Admin/add-marque.jsp</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/entities/LigneCommande.java</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/test/Test.java</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/remplirProduit_1.js</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/remplirCommandeAdmin.js</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/Admin/listeCommande.jsp</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/entities/Commande.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/entities/Produit.java</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/ListCommande.java</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/FindCommandeByStatus.java</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/entities/Client.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/shop.jsp</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/entities/Categorie.java</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/remplirMarqueAdmin.js</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/remplirCategorie.js</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/remplirComboBoxMarque.js</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/detail.html</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/contact.html</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/AddtoCart.java</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/CheckCart.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/services/UserService.java</file>
+            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/cart.js</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/remplirProduitAdmin.js</file>
             <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/services/CommandeService.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/services/ProduitService.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/index.jsp</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/login.jsp</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/services/FactureService.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/ListAllCategorie.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/AddProduct.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/services/LigneCommandeService.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/remplirProduit.js</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/script/remplirComboBoxCategorie.js</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/entities/Facture.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/DeleteFromCart.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/footer.jsp</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/src/java/controllers/UserLogin.java</file>
-            <file>file:/C:/Users/User/Desktop/JAVA%20EE/projetisic/web/cart.jsp</file>
         </group>
     </open-files>
 </project-private>

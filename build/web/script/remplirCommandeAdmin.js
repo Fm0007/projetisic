@@ -36,8 +36,8 @@ function remplirCategorie(data) {
         for (i = 0; i < data.length ; i++) {
             if(data[i][5]==="en cours") {tmp = "pending"; }
             if(data[i][5]==="Valide") {tmp = "moving"; }
-            if(data[i][5]==="Livré") {tmp = "moving"; }
-            if(data[i][5]==="annulé") {tmp = "cancelled"; }
+            if(data[i][5]==="Livre") {tmp = "moving"; }
+            if(data[i][5]==="annule") {tmp = "cancelled"; }
             option +=  "<tr> "
 + "                                   <th scope='row'><b>#"+data[i][0]+"</b></th> "
  + "                                  <td> "
