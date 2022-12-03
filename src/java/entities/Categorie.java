@@ -7,6 +7,7 @@ package entities;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -30,7 +31,7 @@ public class Categorie implements Serializable {
     private int id;
     
     private String nom;
-    @OneToMany(mappedBy = "categorie", fetch =  FetchType.EAGER)
+    @OneToMany(mappedBy = "categorie", fetch =  FetchType.EAGER, cascade = CascadeType.DETACH)
     private List<Produit> produits;
    
     @ManyToOne

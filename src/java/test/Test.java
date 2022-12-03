@@ -6,6 +6,7 @@
 package test;
 
 import controllers.SendMailTLS;
+import static controllers.SendMailTLS.send;
 import entities.Admin;
 import entities.Categorie;
 import entities.Client;
@@ -45,11 +46,10 @@ public class Test {
        // Commande cat = cs.findById(1);
      //  int nb = Integer.parseInt("1");
         //ls.create(new LigneCommande(new LigneCommandePK(100,1),100,1));
-         
               //  ls.delete(tmpp);
-                Commande tmp = cs.findById(3);
-                tmp.setStatus("Valide");
-                cs.update(tmp);
+                //Commande tmp = cs.findById(3);
+                //tmp.setStatus("Valide");
+                //cs.update(tmp);
         //for(Object c: cs.getByStatus("Validé")) System.out.println(c);
     }
 

@@ -16,6 +16,9 @@ $(document).ready(function () {
         }
         
     });
+    
+    
+    
 function remplirCategorie(data) {
         var liste = $("#listproduit");
         var option = "";

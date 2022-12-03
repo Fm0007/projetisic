@@ -5,23 +5,25 @@
  */
 package controllers;
 
-import entities.Client;
-import entities.User;
+import com.google.gson.Gson;
+import entities.Produit;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
+import javax.json.Json;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import services.UserService;
+import services.ProduitService;
 
 /**
  *
  * @author User
  */
-@WebServlet(name = "UserRegister", urlPatterns = {"/UserRegister"})
-public class UserRegister extends HttpServlet {
+@WebServlet(name = "ListSearchProduct", urlPatterns = {"/ListSearchProduct"})
+public class ListSearchProduct extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,22 +36,22 @@ public class UserRegister extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        UserService us = new UserService();
-        String email = request.getParameter("email");
-        String nom = request.getParameter("nom");
-        String password = null; // generation d'un nbr de 8chiffre
-        Client tmp = (Client) new User(email,password);  // on set un client user 
-        // on creer une session 
-        
-        // if user 
-        tmp.setNom(nom);
-        
-        
-        
-        
-        
-        
-            
+        response.setContentType("application/json");
+        Gson gson = new Gson();
+        String name = request.getParameter("name");
+        ProduitService ps = new ProduitService();
+        List result = ps.findByNom(name);
+        if (result.size() == 0) {
+            if (name.equalsIgnoreCase("")) {
+                response.getWriter().write(gson.toJson(ps.listAll()));
+            } else {
+                response.getWriter().write(gson.toJson("introuvable"));
+            }
+
+        } else {
+            response.getWriter().write(gson.toJson(result));
+        }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

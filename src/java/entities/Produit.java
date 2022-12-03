@@ -14,6 +14,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
@@ -22,7 +23,12 @@ import javax.persistence.OneToMany;
  * @author Lachgar
  */
 @Entity
-@NamedQuery(name = "findProduit", query = "select p.id , p.nom , p.designation, p.prix , p.image from Produit p")
+@NamedQueries({@NamedQuery(name = "findProduit", query = "select p.id , p.nom , p.designation, p.prix , p.image from Produit p"),
+     @NamedQuery(name = "findProduitByid", query = "select p.id , p.nom , p.designation, p.prix , p.image from Produit p where p.id = :id"),
+
+
+
+})
 public class Produit implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

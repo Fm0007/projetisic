@@ -137,4 +137,42 @@ public class ProduitService implements IDao<Produit> {
          }
          return produits;
 }
+     public Produit listById(int id) {
+         Produit produit = null;
+         Session session = null;
+         Transaction tx = null;
+         try {
+             session = HibernateUtil.getSessionFactory().openSession();
+             tx = session.beginTransaction();
+             produit = (Produit) session.getNamedQuery("findProduit").setParameter("id", id).uniqueResult();
+             tx.commit();
+         } catch (HibernateException e) {
+             if (tx != null) {
+                 tx.rollback();
+             }
+         } finally {
+             session.close();
+         }
+         return produit;
+}
+     
+     public List<Produit> findByNom(String nom) {
+         List<Produit> produits = null;
+         Session session = null;
+         Transaction tx = null;
+         try {
+             session = HibernateUtil.getSessionFactory().openSession();
+             tx = session.beginTransaction();
+             produits = session.createSQLQuery("select id, nom ,designation, prix , image  from produit where nom like '%"+nom+"%'").list();
+             tx.commit();
+         } catch (HibernateException e) {
+             if (tx != null) {
+                 tx.rollback();
+             }
+         } finally {
+             session.close();
+         }
+         return produits;
+}
+     
 }

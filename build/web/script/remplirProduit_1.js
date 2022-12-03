@@ -17,6 +17,34 @@ $(document).ready(function () {
         }
         
     });
+    
+    
+    $("#searchbox").keyup(function () {
+        $.ajax({
+            url: "ListSearchProduct",
+            data: {name: $(this).val()},
+            success: function (data, textStatus, jqXHR) {
+                if (data==="introuvable"){
+                    introuvable(data);
+                }
+                else {
+                 remplirCategorie(data);   
+                }
+                
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log("erreur");
+            }
+        });
+    });
+  function introuvable(data) {
+        var liste = $("#listproduit");
+        var option = "<div class='d-flex justify-content-center'>"
+                    +"<h6>" + data +"</h6>"
+                    +" </div>";
+        liste.html(option);
+    }  
+    
 function remplirCategorie(data) {
         var liste = $("#listproduit");
         var option = "";

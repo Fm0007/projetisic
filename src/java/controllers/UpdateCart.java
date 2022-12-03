@@ -40,24 +40,24 @@ public class UpdateCart extends HttpServlet {
         int commandeid = Integer.parseInt(request.getParameter("idcommande"));
         int arg = Integer.parseInt(request.getParameter("arg"));
         LigneCommandeService lcs = new LigneCommandeService();
-        LigneCommandePK lcPK = new LigneCommandePK(idproduit,commandeid);
+        LigneCommandePK lcPK = new LigneCommandePK(idproduit, commandeid);
         LigneCommande tmp = lcs.getByPK(lcPK);
         if (arg == 1) {
             //munis
-            tmp.setQuantité(((tmp.getQuantité())-1));
+            tmp.setQuantité(((tmp.getQuantité()) - 1));
             if (tmp.getQuantité() == 0) {
                 lcs.delete(tmp);
-                
+
             } else {
                 lcs.update(tmp);
-                
+
             }
         }
         if (arg == 0) {
             //add
-            tmp.setQuantité(((tmp.getQuantité())+1));
+            tmp.setQuantité(((tmp.getQuantité()) + 1));
             lcs.update(tmp);
-            
+
         }
         RequestDispatcher rd = request.getRequestDispatcher("ListCart");
         rd.forward(request, response);
